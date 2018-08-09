@@ -11,7 +11,8 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class OccurrenceSerializer(serializers.ModelSerializer):
-    username = serializers.CharField(source='author.username', read_only=True)
+    # username = serializers.CharField(source='author.username', read_only=True)
+    username = serializers.CharField(source='author', read_only=True)
 
     class Meta:
         model = Occurrence

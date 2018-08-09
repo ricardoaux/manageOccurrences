@@ -1,6 +1,5 @@
 from rest_framework import status
 from rest_framework import viewsets
-from rest_framework.settings import api_settings
 from rest_framework.response import Response
 from manageOccurrences.myapp.models import Occurrence
 from manageOccurrences.myapp.serializers import OccurrenceSerializer, UserSerializer
@@ -23,6 +22,7 @@ class OccurrenceViewSet(viewsets.ModelViewSet):
     serializer_class = OccurrenceSerializer
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ['category', 'author_id']
+    read_only_fields = []
 
     """
         Listar todas as ocorrencias
@@ -40,7 +40,7 @@ class OccurrenceViewSet(viewsets.ModelViewSet):
         # set to mutable
         data._mutable = True
         data['author'] = request.user.id
-        # data['state'] = 'Por Validar'
+        data['state'] = "POR VALIDAR"
         # set mutable flag back
         data._mutable = _mutable
         serializer = OccurrenceSerializer(data=data)

@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.utils import timezone
 
 STATE_CHOICES = (('POR VALIDAR', 'POR VALIDAR'), ('VALIDADO', 'VALIDADO'), ('RESOLVIDO', 'RESOLVIDO'))
 CATEGORY_CHOICES = (('CONSTRUCTION', 'CONSTRUCTION'), ('SPECIAL_EVENT', 'SPECIAL_EVENT'), ('INCIDENT', 'INCIDENT'),
@@ -18,3 +17,4 @@ class Occurrence(models.Model):
 
     class Meta:
         ordering = ('updated',)
+
