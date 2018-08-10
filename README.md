@@ -69,3 +69,14 @@ https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your
   
  * /admin/
  
+ ## Testes
+ 
+  * Para testar os diversos endpoints pode optar por usar o browser, usando o url http://127.0.0.1:8000
+  
+  ou
+  
+  * Usar a aplicação Postman (https://www.getpostman.com/) e configurar os diversos pedidos, de acordo com o especificado.
+ 
+ Disponibilizo os seguintes pedidos como forma de apoio: https://www.getpostman.com/collections/479efa92fc3366de52a6
+ 
+ Atenção, é necessário mudar alguns dos parâmetros presentes na collection, de modo a ir de encontro ao que existe na BD.
