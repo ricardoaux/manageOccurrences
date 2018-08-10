@@ -69,7 +69,7 @@ https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your
   
  * **/admin/**
  
- * **/admin/auth/users/**
+ * **/admin/auth/user/**
  
  * **/admin/myapp/occurrence/**
  
