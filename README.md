@@ -14,12 +14,26 @@ API REST que permite a gestão de ocorrências em ambiente urbano. As ocorrênci
 ## Requirements:
    * Python 3.7.0 (testado com esta versão)
    * PostgreSQL 10.5 (testado com esta versão)
+   * VirtualEnv (sudo pip install virtualenv)
 
 #### Instalar requirements adicionais (num ambiente virtual):
    * virtualenv <env_name>source 
    * <env_name>/bin/activate (Unix) ou <env_name>\Scripts\activate (Windows)
    * pip install -r path/to/requirements.txt
+   
+## How To Use PostgreSQL
+Ler o seguinte artigo e **seguir os diversos passos indicados**:
+
+https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04
+
+**O nome da base de dados deve ser manageoccurrences**
+ * CREATE DATABASE manageoccurrences;
  
+ Caso opter por outro nome, editar o ficheiro settings.py disponível no projeto.
+
+## Starting Django Project:
+ * django-admin.py startproject myapp
+
 ## Migrations:
  
  * python manage.py makemigrations
