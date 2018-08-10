@@ -4,18 +4,22 @@ Requeriments:
  . 
  
  Migrations:
+ 
  . python manage.py makemigrations
+ 
  . python manage.py migrate
  
  Run Server:
+ 
  . python manage.py runserver
  
  Endpoints:
+ 
  . /users/
   - GET: Lista todos os utilizadores do sistema
   - POST: Permite criar utilizador
   
- . /users/<pk>/
+ . /users/<pk>
   - GET: Lista utilizador específico
   - PUT: Permite editar o utilizador
   
