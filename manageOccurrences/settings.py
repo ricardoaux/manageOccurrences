@@ -76,7 +76,10 @@ WSGI_APPLICATION = 'manageOccurrences.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-
+"""
+    Configuracao da Base de Dados PostgreSQL
+    - Requer o pyscopg2 instalado
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -128,6 +131,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+"""
+    1) garantir que utilizador nao autenticados apenas podem ver
+    2) adicao de filtros para as ocorrencias
+"""
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.

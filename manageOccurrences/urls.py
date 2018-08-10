@@ -19,6 +19,7 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from manageOccurrences.myapp import views
 
+# definir os caminhos a serem construidos
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'occurrences', views.OccurrenceViewSet, base_name='occurrences')

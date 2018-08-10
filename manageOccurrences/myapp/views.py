@@ -6,13 +6,16 @@ from manageOccurrences.myapp.serializers import OccurrenceSerializer, UserSerial
 from django.contrib.auth.models import User
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import permissions
+from django.core.exceptions import PermissionDenied
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
-                          permissions.IsAdminUser,)
+    # Apenas o administrador tem permissoes para ver e editar os utilizadores
+    permission_classes = (permissions.IsAdminUser,)
 
-    # API endpoint that allows users to be viewed or edited.
+    """
+        Permite ver e editar todos os utilizadores do sistema
+    """
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
@@ -20,8 +23,9 @@ class UserViewSet(viewsets.ModelViewSet):
 class OccurrenceViewSet(viewsets.ModelViewSet):
     queryset = Occurrence.objects.all()
     serializer_class = OccurrenceSerializer
+    # Permite filtras os resultados. Neste caso pela categoria e pelo autor
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ['category', 'author_id']
+    filter_fields = ['category', 'author']
     read_only_fields = []
 
     """
@@ -39,6 +43,7 @@ class OccurrenceViewSet(viewsets.ModelViewSet):
         _mutable = data._mutable
         # set to mutable
         data._mutable = True
+        # Adicionar o utilizador atual como autor e o estado Por Validar
         data['author'] = request.user.id
         data['state'] = "POR VALIDAR"
         # set mutable flag back
@@ -56,16 +61,21 @@ class OccurrenceViewSet(viewsets.ModelViewSet):
         return super(OccurrenceViewSet, self).retrieve(request, pk)
 
     """
-        Permite atualizar a ocorrencia, caso seja administrador
+        Permite atualizar a ocorrencia
         - Mudar o estado
+        - Requer permissão de administrador
     """
     def update(self, request, pk=None):
         if request.user.is_superuser:
             return super(OccurrenceViewSet, self).update(request, pk)
+        else:
+            raise PermissionDenied
 
     def partial_update(self, request, pk=None):
         if request.user.is_superuser:
             return super(OccurrenceViewSet, self).partial_update(request, pk)
+        else:
+            raise PermissionDenied
 
     """
         Apagar ocorrencia
@@ -76,3 +86,5 @@ class OccurrenceViewSet(viewsets.ModelViewSet):
         author_id = occurrence.author_id
         if request.user.is_superuser or author_id == request.user.id:
             return super(OccurrenceViewSet, self).destroy(request, pk)
+        else:
+            raise PermissionDenied
