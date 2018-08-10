@@ -80,3 +80,5 @@ https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your
  Disponibilizo os seguintes pedidos como forma de apoio: https://www.getpostman.com/collections/479efa92fc3366de52a6
  
  Atenção, é necessário mudar alguns dos parâmetros presentes na collection, de modo a ir de encontro ao que existe na BD.
+ 
+ **Qualquer um dos testes presentes na collection fornecida, funcionou conforme expectável no meu ambiente local.** 
