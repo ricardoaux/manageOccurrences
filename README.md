@@ -1,41 +1,40 @@
 # manageOccurrences
 
-Requeriments:
+## Requeriments:
  . 
  
- Migrations:
+## Migrations:
  
- . python manage.py makemigrations
+ * python manage.py makemigrations
+ * python manage.py migrate
  
- . python manage.py migrate
+## Run Server:
  
- Run Server:
+ * python manage.py runserver
  
- . python manage.py runserver
+## Endpoints:
  
- Endpoints:
- 
- . /users/
+ * /users/
   - GET: Lista todos os utilizadores do sistema
   - POST: Permite criar utilizador
   
- . /users/<pk>
+ * /users/<pk>/ 
   - GET: Lista utilizador específico
   - PUT: Permite editar o utilizador
   
- . /occurrences/
+ * /occurrences/
   - GET: Lista todas as ocorrências
   - POST: Cria uma nova ocorrência
   
-  ./occurrences/<pk>
+ * /occurrences/<pk>/
    - GET: Lista uma ocorrência específica
    - PUT: Permite editar uma ocorrência
    - DELETE: Apaga a ocorrência
   
-  . /occurrences/?category=<category>&author=<author_id>
-    - GET: Lista a(s) ocorrencia(s) que obedecem aos filtros invocados
+  * /occurrences/?category=<category>&author=<author_id>
+   - GET: Lista a(s) ocorrencia(s) que obedecem aos filtros invocados
   
-  ./api-auth/
+  * /api-auth/
   
-  ./admin/
+  * /admin/
  
