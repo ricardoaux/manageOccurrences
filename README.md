@@ -15,26 +15,26 @@
 ## Endpoints:
  
  * /users/
-  - GET: Lista todos os utilizadores do sistema
-  - POST: Permite criar utilizador
+   * GET: Lista todos os utilizadores do sistema
+   * POST: Permite criar utilizador
   
- * /users/<pk>/ 
-  - GET: Lista utilizador específico
-  - PUT: Permite editar o utilizador
+ * /users/\<pk\>/ 
+   * GET: Lista utilizador específico
+   * PUT: Permite editar o utilizador
   
  * /occurrences/
-  - GET: Lista todas as ocorrências
-  - POST: Cria uma nova ocorrência
+   * GET: Lista todas as ocorrências
+   * POST: Cria uma nova ocorrência
   
- * /occurrences/<pk>/
-   - GET: Lista uma ocorrência específica
-   - PUT: Permite editar uma ocorrência
-   - DELETE: Apaga a ocorrência
+ * /occurrences/\<pk\>/
+   * GET: Lista uma ocorrência específica
+   * PUT: Permite editar uma ocorrência
+   * DELETE: Apaga a ocorrência
   
-  * /occurrences/?category=<category>&author=<author_id>
-   - GET: Lista a(s) ocorrencia(s) que obedecem aos filtros invocados
+ * /occurrences/?category=\<category\>&author=\<author_id\>
+   * GET: Lista a(s) ocorrencia(s) que obedecem aos filtros invocados
   
-  * /api-auth/
+ * /api-auth/
   
-  * /admin/
+ * /admin/
  
