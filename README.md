@@ -1,7 +1,13 @@
 # manageOccurrences
 
-## Requeriments:
- . 
+## Requirements:
+   * Python 3.7.0 (testado com esta versão)
+   * PostgreSQL 10.5 (testado com esta versão)
+
+#### Instalar requirements adicionais (num ambiente virtual):
+   * virtualenv <env_name>source 
+   * <env_name>/bin/activate (Unix) ou <env_name>\Scripts\activate (Windows)
+   * pip install -r path/to/requirements.txt
  
 ## Migrations:
  
