@@ -45,29 +45,33 @@ https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your
  
 ## Endpoints:
  
- * /users/
+ * **/users/**
    * GET: Lista todos os utilizadores do sistema
    * POST: Permite criar utilizador
   
- * /users/\<pk\>/ 
+ * **/users/\<pk\>/** 
    * GET: Lista utilizador específico
    * PUT: Permite editar o utilizador
   
- * /occurrences/
+ * **/occurrences/**
    * GET: Lista todas as ocorrências
    * POST: Cria uma nova ocorrência
   
- * /occurrences/\<pk\>/
+ * **/occurrences/\<pk\>/**
    * GET: Lista uma ocorrência específica
    * PUT: Permite editar uma ocorrência
    * DELETE: Apaga a ocorrência
   
- * /occurrences/?category=\<category\>&author=\<author_id\>
+ * **/occurrences/?category=\<category\>&author=\<author_id\>**
    * GET: Lista a(s) ocorrencia(s) que obedecem aos filtros invocados
   
- * /api-auth/
+ * **/api-auth/**
   
- * /admin/
+ * **/admin/**
+ 
+ * **/admin/auth/users/**
+ 
+ * **/admin/myapp/occurrence/**
  
  ## Testes
  
